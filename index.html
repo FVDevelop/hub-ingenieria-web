@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HUB-INGENIERIA | Próximamente</title>
+    
+    <link href="https://db.onlinewebfonts.com/c/245844439c0966f97d517c556b621e25?family=Garet" rel="stylesheet" type="text/css"/>
+
+    <style>
+        :root {
+            --font-garet: "Garet", sans-serif;
+            --color-dark-blue: #2c3e50; /* Azul petróleo */
+            --color-light-gray: #ecf0f1; /* Gris claro para fondos o elementos */
+            --color-medium-gray: #7f8c8d; /* Gris medio para texto secundario */
+            --color-text-dark: #34495e; /* Gris oscuro para texto principal */
+            --color-white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-garet);
+            background-color: var(--color-light-gray);
+            color: var(--color-text-dark);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Franja Superior (Header) */
+        header {
+            background-color: var(--color-white);
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-bottom: 1px solid #dcdcdc;
+            position: relative;
+            z-index: 10;
+        }
+
+        .logo {
+            font-weight: 700; /* Garet Bold para HUB */
+            font-size: 1.5rem;
+            letter-spacing: 7px;
+            text-transform: uppercase;
+            color: var(--color-dark-blue);
+        }
+
+        .logo span {
+            font-weight: 300; /* Garet Light para INGENIERIA */
+            color: var(--color-medium-gray);
+        }
+
+        /* Hero Section con imagen de cubos 3D */
+        .hero {
+            position: relative;
+            height: calc(100vh - 100px); /* Resta la altura del header */
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .hero-image {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            /* Imagen de cubos 3D con tonos azul petróleo y gris */
+            background-image: url('https://image.pollinations.ai/prompt/3D%20cubes%20connecting%20abstract%20digital%20network,%20shades%20of%20petrol%20blue%20and%20gray,%20futuristic%20minimalist,%20clean%20lines?width=1920&height=1080&seed=2'); 
+            background-size: cover;
+            background-position: center;
+            z-index: 1;
+            filter: brightness(0.8) contrast(1.1); /* Ajustes para integrar mejor */
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(255, 255, 255, 0.2); /* Sutil overlay para legibilidad */
+            z-index: 2;
+        }
+
+        /* Contenedor central de texto */
+        .content-card {
+            position: relative;
+            z-index: 3;
+            background: rgba(255, 255, 255, 0.95); /* Fondo casi blanco con transparencia */
+            padding: 80px 60px;
+            max-width: 800px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+            border-radius: 5px;
+        }
+
+        .line {
+            width: 60px;
+            height: 2px;
+            background: var(--color-dark-blue);
+            margin: 0 auto 35px;
+        }
+
+        h1 {
+            font-size: 2.8rem; /* Tamaño grande para el título principal Garet */
+            font-weight: 700; /* Garet Bold */
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            line-height: 1.2;
+            color: var(--color-dark-blue);
+        }
+
+        p {
+            font-size: 1.2rem; /* Tamaño Garet para el texto */
+            font-weight: 400; /* Garet Regular */
+            color: var(--color-text-dark);
+            line-height: 1.7;
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-slogan {
+            font-size: 1.05rem; /* Garet para el lema */
+            font-weight: 600; /* Garet Semibold */
+            color: var(--color-dark-blue);
+            margin-top: 40px;
+            letter-spacing: 0.5px;
+        }
+
+        /* Footer */
+        footer {
+            position: absolute;
+            bottom: 40px;
+            width: 100%;
+            text-align: center;
+            z-index: 4;
+        }
+
+        .contact-link {
+            font-family: var(--font-garet);
+            font-size: 0.9rem;
+            letter-spacing: 3px;
+            color: var(--color-dark-blue);
+            text-decoration: none;
+            border-bottom: 1px solid var(--color-dark-blue);
+            padding-bottom: 3px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+        }
+
+        .contact-link:hover {
+            opacity: 0.7;
+            color: #1a2c3d;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header { height: 80px; }
+            .logo { font-size: 1.2rem; letter-spacing: 5px; }
+            .hero { height: calc(100vh - 80px); }
+            .content-card { margin: 20px; padding: 50px 30px; }
+            h1 { font-size: 2rem; letter-spacing: 1px; }
+            p { font-size: 1rem; }
+            .cta-slogan { font-size: 0.9rem; margin-top: 30px; }
+            footer { bottom: 20px; }
+            .contact-link { font-size: 0.8rem; letter-spacing: 2px; }
+        }
+
+        @media (max-width: 480px) {
+            .content-card { padding: 40px 20px; }
+            h1 { font-size: 1.6rem; }
+            p { font-size: 0.95rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">HUB<span>INGENIERIA</span></div>
+    </header>
+
+    <main class="hero">
+        <div class="hero-image"></div>
+        <div class="hero-overlay"></div>
+        
+        <div class="content-card">
+            <div class="line"></div>
+            <h1>Management y Transformación Operativa</h1>
+            <p>
+                Próximamente estaremos lanzando nuestra nueva página, un espacio diseñado para potenciar la eficiencia y el éxito de su negocio.
+            </p>
+            <p class="cta-slogan">
+                La ingeniería que transforma desafíos en resultados tangibles.
+            </p>
+        </div>
+
+        <footer>
+            <a href="mailto:info@hub-ingenieria.com" class="contact-link">Contactar a HUB-INGENIERIA</a>
+        </footer>
+    </main>
+
+</body>
+</html>
