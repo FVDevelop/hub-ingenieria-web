@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HUB-INGENIERIA | Próximamente</title>
+    
+    <link href="https://db.onlinewebfonts.com/c/245844439c0966f97d517c556b621e25?family=Garet" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <style>
+        :root {
+            --font-garet: "Garet", sans-serif;
+            --color-dark-blue: #1a3a4a;
+            --color-azulino: #2c5282;
+            --color-medium-gray: #7f8c8d;
+            --color-white: #ffffff;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: var(--font-garet);
+            background-color: #f4f7f9;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        /* 1. FRANJA SUPERIOR: LOGO */
+        header {
+            background-color: var(--color-white);
+            height: 25vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 1.6rem;
+            letter-spacing: 8px;
+            text-transform: uppercase;
+            color: var(--color-dark-blue);
+        }
+
+        .logo span {
+            font-weight: 300;
+            color: var(--color-medium-gray);
+        }
+
+        /* 2. FRANJA CENTRAL: CONTENIDO Y PERSPECTIVA */
+        .hero {
+            position: relative;
+            height: 50vh; /* Franja más amplia */
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .hero-image {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            /* Imagen con perspectiva y color petróleo menos intenso */
+            background-image: url('https://image.pollinations.ai/prompt/Wide%20angle%20perspective%20of%203D%20cubes,%20soft%20lighting,%20desaturated%20petrol%20blue%20and%20light%20gray%20tones,%20clean%20minimalist%20engineering%20style?width=1920&height=1080&nologo=true'); 
+            background-size: cover;
+            background-position: center;
+            z-index: 1;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(26, 58, 74, 0.2); /* Overlay sutil */
+            z-index: 2;
+        }
+
+        .content-card {
+            position: relative;
+            z-index: 3;
+            background: rgba(255, 255, 255, 0.15); 
+            backdrop-filter: blur(15px); 
+            -webkit-backdrop-filter: blur(15px);
+            padding: 40px;
+            width: 90%;
+            max-width: 700px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 4px;
+        }
+
+        .line {
+            width: 40px;
+            height: 2px;
+            background: var(--color-white);
+            margin: 0 auto 20px;
+        }
+
+        h1 {
+            font-size: 1.8rem; /* Título un poco más chico */
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--color-white);
+        }
+
+        p {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.95);
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .cta-slogan {
+            font-weight: 700;
+            font-size: 0.9rem;
+            color: var(--color-white);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* 3. FRANJA INFERIOR: WHATSAPP */
+        footer {
+            background-color: var(--color-white);
+            height: 25vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+        }
+
+        .btn-whatsapp {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background-color: #1a3a4a;
+            color: var(--color-white);
+            padding: 15px 30px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.8rem;
+            border-radius: 4px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: 0.3s;
+        }
+
+        .btn-whatsapp:hover {
+            background-color: var(--color-azulino);
+        }
+
+        .footer-tag {
+            margin-top: 15px;
+            font-size: 0.7rem;
+            color: var(--color-medium-gray);
+            letter-spacing: 2px;
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 1.4rem; }
+            .content-card { padding: 25px; }
+            header, footer { height: 20vh; }
+            .hero { height: 60vh; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">HUB<span>INGENIERIA</span></div>
+    </header>
+
+    <main class="hero">
+        <div class="hero-image"></div>
+        <div class="hero-overlay"></div>
+        
+        <div class="content-card">
+            <div class="line"></div>
+            <h1>Management y Transformación Operativa</h1>
+            <p>Próximamente estaremos lanzando nuestra nueva plataforma diseñada para potenciar la eficiencia de su negocio.</p>
+            <span class="cta-slogan">Resultados tangibles a través de la ingeniería.</span>
+        </div>
+    </main>
+
+    <footer>
+        <a href="https://wa.me/5491100000000?text=Hola,%20quisiera%20realizar%20una%20consulta%20a%20HUB-INGENIERIA" 
+           class="btn-whatsapp" target="_blank">
+            <i class="fa-brands fa-whatsapp"></i>
+            Contactar por WhatsApp
+        </a>
+        <div class="footer-tag">LANZAMIENTO 2024</div>
+    </footer>
+
+</body>
+</html>
